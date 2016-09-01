@@ -14,7 +14,6 @@ import * as types from '../constants/ActionTypes';
 import { assign } from 'lodash';
 
 const initialState = {
-  friends: [0, 1, 2],
   friendsById: [
     {
       id: 0,
@@ -38,7 +37,6 @@ export default function (state = initialState, action) {
       const newId = (state.friends[len - 1] + 1) || 0;
       return {
         ...state,
-        friends: state.friends.concat(newId),
         friendsById: [
           ...state.friendsById,
           {
@@ -52,7 +50,6 @@ export default function (state = initialState, action) {
     case types.DELETE_FRIEND:
       return {
         ...state,
-        friends: state.friends.filter((id) => id !== action.id),
         friendsById: state.friendsById.filter((friend) => friend.id !== action.id)
       };
 

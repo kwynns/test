@@ -1,12 +1,15 @@
 import './AddFriendInput.scss';
 
 import React, { Component, PropTypes } from 'react';
+import {addFriend} from '../../actions/FriendsActions';
+import { connect } from 'react-redux';
 
-export default class AddFriendInput extends Component {
+class AddFriendInput extends Component {
 
   static propTypes = {
     addFriend: PropTypes.func.isRequired,
-    name: PropTypes.string
+    name: PropTypes.string,
+    dispatch: PropTypes.func
   };
 
   constructor(props, context) {
@@ -27,7 +30,7 @@ export default class AddFriendInput extends Component {
   handleSubmit(e) {
     const name = e.target.value.trim();
     if (e.which === 13) {
-      this.props.addFriend(name);
+      this.props.dispatch(addFriend(name));
       this.setState({ name: '' });
     }
   }
@@ -45,3 +48,5 @@ export default class AddFriendInput extends Component {
     );
   }
 }
+
+export default connect()(AddFriendInput);

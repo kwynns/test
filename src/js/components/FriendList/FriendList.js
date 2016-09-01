@@ -1,10 +1,10 @@
 import './FriendList.scss';
 
 import React, { Component, PropTypes } from 'react';
-
+import { connect } from 'react-redux';
 import FriendListItem from '../FriendListItem/FriendListItem';
 
-export default class FriendList extends Component {
+class FriendList extends Component {
 
   static propTypes = {
     friends: PropTypes.array.isRequired,
@@ -18,8 +18,7 @@ export default class FriendList extends Component {
           key={friend.id}
           id={friend.id}
           name={friend.name}
-          starred={friend.starred}
-          {...this.props.actions} />
+          starred={friend.starred} />
       )
     );
   }
@@ -32,3 +31,10 @@ export default class FriendList extends Component {
     );
   }
 }
+function mapStateToProps(state) {
+  return {
+    friends: state.friendList.friendsById
+  };
+}
+
+export default connect(mapStateToProps)(FriendList);
