@@ -12,7 +12,7 @@
 
 import * as types from '../constants/ActionTypes';
 import { assign } from 'lodash';
-
+import uuid from 'uuid-v4';
 const initialState = {
   friendsById: [
     {
@@ -33,8 +33,8 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case types.ADD_FRIEND: {
-      const len = state.friends.length ? state.friends.length : 1;
-      const newId = (state.friends[len - 1] + 1) || 0;
+
+      const newId = uuid();
       return {
         ...state,
         friendsById: [
