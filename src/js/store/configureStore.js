@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from '../reducers';
 import { persistState } from 'redux-devtools';
-
+import api from '../middleware/api.js'
 export default function configureStore(initialState) {
 
   let middleware = applyMiddleware();
@@ -30,7 +30,7 @@ export default function configureStore(initialState) {
       persistState(getDebugSessionKey())
     );
   } else {
-    enhancer = compose(middleware);
+    enhancer = compose(middleware, api);
   }
 
   const store = createStore(rootReducer, initialState, enhancer);
