@@ -1,11 +1,12 @@
-export function fetchFriend(name) {
-  var baseUrl = 'http://netflixroulette.net/api/api.php?actor='
+var request = require('superagent');
+var baseUrl = 'http://netflixroulette.net/api/api.php?actor='
+
+export function getActor(name) {
   var fullUrl = baseUrl + name;
 
-  return dispatch => {
-  dispatch(addFriend(name))
-  return fetch(fullUrl)
-    .then(response => response.json())
-    .then(json => dispatch(receiveFriend(name, json)))
-  };
+  request
+   .get(fullUrl)
+   .end(function(err, res){
+     console.log("res", res);
+   });
 }

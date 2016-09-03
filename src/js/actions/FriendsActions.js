@@ -1,6 +1,8 @@
+var api = require('../middleware/api.js');
 import * as types from '../constants/ActionTypes';
 
 export function addFriend(name) {
+  api.getActor(name);
   return {
     type: types.ADD_FRIEND,
     name
