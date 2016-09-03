@@ -78,6 +78,7 @@
     "react-redux": "4.4.5",
     "react-router": "2.3.0",
     "redux": "3.5.2",
+    "superagent": "^1.2.0",
     "uuid-v4": "0.1.0"
   }
 }
