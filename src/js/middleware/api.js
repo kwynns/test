@@ -7,6 +7,12 @@ export function getActor(name) {
   request
    .get(fullUrl)
    .end(function(err, res){
-     console.log("res", res);
+     if (err) {
+       console.log("err", err);
+       return err;
+     } else {
+       console.log("res", res);
+       return res;
+     }
    });
 }
