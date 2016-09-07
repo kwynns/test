@@ -1,11 +1,9 @@
-var api = require('../middleware/api.js');
 import * as types from '../constants/ActionTypes';
 
-export function addFriend(name) {
-  api.getActor(name);
+export function setMovies(movies) {
   return {
-    type: types.ADD_FRIEND,
-    name
+    type: types.SET_MOVIES,
+    movies
   };
 }
 

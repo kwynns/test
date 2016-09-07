@@ -1,13 +1,14 @@
 import './AddFriendInput.scss';
+var api = require('../../middleware/api.js');
 
 import React, { Component, PropTypes } from 'react';
-import {addFriend} from '../../actions/FriendsActions';
+import {setMovies} from '../../actions/FriendsActions';
 import { connect } from 'react-redux';
 
 class AddFriendInput extends Component {
 
   static propTypes = {
-    addFriend: PropTypes.func.isRequired,
+    setMovies: PropTypes.func.isRequired,
     name: PropTypes.string,
     dispatch: PropTypes.func
   };
@@ -29,8 +30,9 @@ class AddFriendInput extends Component {
 
   handleSubmit(e) {
     const name = e.target.value.trim();
+    api.getMoviesFor(name);
     if (e.which === 13) {
-      this.props.dispatch(addFriend(name));
+      this.props.dispatch(setMovies(response));
       this.setState({ name: '' });
     }
   }
@@ -41,7 +43,7 @@ class AddFriendInput extends Component {
         type="text"
         autoFocus="true"
         className="form-control addFriendInput"
-        placeholder="Type the name of a friend"
+        placeholder="Type the name of an actor"
         value={this.state.name}
         onChange={this.handleChange}
         onKeyDown={this.handleSubmit} />

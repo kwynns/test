@@ -1,7 +1,7 @@
 var request = require('superagent');
 var baseUrl = 'http://netflixroulette.net/api/api.php?actor='
 
-export function getActor(name) {
+export function getMoviesFor(name) {
   var fullUrl = baseUrl + name;
 
   request

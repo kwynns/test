@@ -14,27 +14,15 @@ import * as types from '../constants/ActionTypes';
 import { assign } from 'lodash';
 import uuid from 'uuid-v4';
 const initialState = {
-  friendsById: [
-    {
-      id: 0,
-      name: '2Pac'
-    },
-    {
-      id: 1,
-      name: 'Dr.Dre'
-    },
-    {
-      id: 2,
-      name: 'Big Pun'
-    }
-  ]
+  friendsById: []
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case types.ADD_FRIEND: {
 
+    case types.SET_MOVIES: {
       const newId = uuid();
+      console.log("action", action);
       return {
         ...state,
         friendsById: [
