@@ -1,2 +1,2 @@
-export { default as AddFriendInput } from './AddFriendInput/AddFriendInput';
-export { default as FriendList } from './FriendList/FriendList';
+export { default as SetActorInput } from './SetActorInput/SetActorInput';
+export { default as MovieList } from './MovieList/MovieList';

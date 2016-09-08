@@ -5,7 +5,7 @@ import React, { Component, PropTypes } from 'react';
 import {setMovies} from '../../actions/FriendsActions';
 import { connect } from 'react-redux';
 
-class AddFriendInput extends Component {
+class SetActorInput extends Component {
 
   static propTypes = {
     setMovies: PropTypes.func.isRequired,
@@ -29,11 +29,13 @@ class AddFriendInput extends Component {
   }
 
   handleSubmit(e) {
-    const name = e.target.value.trim();
-    api.getMoviesFor(name);
-    if (e.which === 13) {
-      this.props.dispatch(setMovies(response));
-      this.setState({ name: '' });
+    if (e.key === 'Enter') {
+      const name = e.target.value.trim();
+      api.getMoviesFor(name, (results) => {
+        console.log('results', results);
+        this.props.dispatch(setMovies(results));
+        this.setState({ name: '' });
+      });
     }
   }
 
@@ -46,9 +48,9 @@ class AddFriendInput extends Component {
         placeholder="Type the name of an actor"
         value={this.state.name}
         onChange={this.handleChange}
-        onKeyDown={this.handleSubmit} />
+        onKeyPress={this.handleSubmit} />
     );
   }
 }
 
-export default connect()(AddFriendInput);
+export default connect()(SetActorInput);

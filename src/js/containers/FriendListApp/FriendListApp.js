@@ -2,7 +2,7 @@ import './FriendListApp.scss';
 
 import React, { Component, PropTypes } from 'react';
 
-import { AddFriendInput, FriendList } from '../../components';
+import { SetActorInput, MovieList } from '../../components';
 
 class FriendListApp extends Component {
 
@@ -15,9 +15,9 @@ class FriendListApp extends Component {
 
     return (
       <div className="friendListApp">
-        <h1>Da Bros List</h1>
-        <AddFriendInput />
-        <FriendList />
+        <h1>Movies by actor</h1>
+        <SetActorInput />
+        <MovieList />
       </div>
     );
   }

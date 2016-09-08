@@ -1,7 +1,7 @@
 var request = require('superagent');
-var baseUrl = 'http://netflixroulette.net/api/api.php?actor='
+var baseUrl = 'http://netflixroulette.net/api/api.php?actor=';
 
-export function getMoviesFor(name) {
+export function getMoviesFor(name, cb) {
   var fullUrl = baseUrl + name;
 
   request
@@ -11,8 +11,7 @@ export function getMoviesFor(name) {
        console.log("err", err);
        return err;
      } else {
-       console.log("res", res);
-       return res;
+       cb(res.body);
      }
    });
 }

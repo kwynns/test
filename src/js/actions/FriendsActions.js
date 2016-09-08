@@ -7,9 +7,9 @@ export function setMovies(movies) {
   };
 }
 
-export function deleteFriend(id) {
+export function removeMovieByShowId(id) {
   return {
-    type: types.DELETE_FRIEND,
+    type: types.REMOVE_MOVIE_BY_SHOW_ID,
     id
   };
 }
