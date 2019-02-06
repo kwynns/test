@@ -4,7 +4,7 @@ import { Route, IndexRoute, Redirect } from 'react-router';
 import App from './components/App';
 import FriendListApp from './containers/FriendListApp/FriendListApp';
 import NotFoundView from './views/NotFoundView';
-
+// something
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={FriendListApp} />
