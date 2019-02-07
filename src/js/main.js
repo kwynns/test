@@ -10,6 +10,8 @@ import { Router, browserHistory } from 'react-router';
 
 
 
+
+
 import routes from './routes';
 console.log('making a change')
 const store = configureStore();
