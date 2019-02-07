@@ -25,9 +25,11 @@ if (process.env.NODE_ENV !== 'production') {
     <div>
       <Router history={browserHistory} routes={routes} />
       <DevTools />
-      
+
     </div>
   );
+
+  
 } else {
   ComponentEl = (
     <div>
