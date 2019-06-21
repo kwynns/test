@@ -1,5 +1,6 @@
 # React + Redux w/ ES6 Starter Project
 
+sdfdf
 **UPDATE:** A _BIG_ update is coming to the boilerplate, incl. Webpack 2 (tree-shaking), React Hot Loader v3, Code Splitting for React Router, scalable app architecture, new utility tools, best practices, and more. Stay tuned for **soon** updates.
 
 <hr />
