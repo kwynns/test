@@ -1,9 +1,9 @@
 # React + Redux w/ ES6 Starter Project
 
-**UPDATE:** A *BIG* update is coming to the boilerplate, incl. Webpack 2 (tree-shaking), React Hot Loader v3, Code Splitting for React Router, scalable app architecture, new utility tools, best practices, and more. Stay tuned for **soon** updates.
+**UPDATE:** A _BIG_ update is coming to the boilerplate, incl. Webpack 2 (tree-shaking), React Hot Loader v3, Code Splitting for React Router, scalable app architecture, new utility tools, best practices, and more. Stay tuned for **soon** updates.
 
 <hr />
-
+asdfdsf
 A boilerplate using React, Redux, webpack + hot module reloading, and ES6 + JSX via Babel.
 
 The provided boilerplate enables client-side ES6 via the following technologies:
@@ -34,19 +34,17 @@ $ npm install
 - Update name, description, author, repository in `package.json`
 - Update app title in `src/index.html`
 
-
 ## Development
 
 There are two ways in which you can build and run the web app:
 
-* Build once for (ready for ***Production***):
-  * `$ npm run build`
-  * Open `build/index.html` through the local webserver
-
+- Build once for (ready for **_Production_**):
+  - `$ npm run build`
+  - Open `build/index.html` through the local webserver
 
 * Hot reloading via webpack dev server:
-  * `$ npm start`
-  * Point your browser to http://localhost:3000/, page hot reloads automatically when there are changes
+  - `$ npm start`
+  - Point your browser to http://localhost:3000/, page hot reloads automatically when there are changes
 
 ## Testing
 
@@ -78,17 +76,17 @@ We're handling it differently in DEV vs PROD.
 
 When you run `npm start`:
 
- 1. The sass-loader compiles Sass into CSS
- 2. Webpack bundles the compiled CSS into app.js. Sounds weird, but it works!
- 3. app.js contains code that loads styles into the &lt;head&gt; section of index.html via JavaScript. This is why there is no stylesheet reference in index.html. In fact, if you disable JavaScript in your browser, you'll see the styles don't load either.
+1.  The sass-loader compiles Sass into CSS
+2.  Webpack bundles the compiled CSS into app.js. Sounds weird, but it works!
+3.  app.js contains code that loads styles into the &lt;head&gt; section of index.html via JavaScript. This is why there is no stylesheet reference in index.html. In fact, if you disable JavaScript in your browser, you'll see the styles don't load either.
 
 The approach above supports hot reloading, which is great for development. However, it also create a flash of unstyled content on load because you have to wait for the JavaScript to parse and load styles before they're applied. So for the production build, we use a different approach:
 
 When you run `npm run build`:
 
- 1. The sass-loader compiles Sass into CSS
- 2. The [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin) extracts the compiled Sass into app.css
- 3. buildHtml.js adds a reference to the stylesheet to the head of index.html.
+1.  The sass-loader compiles Sass into CSS
+2.  The [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin) extracts the compiled Sass into app.css
+3.  buildHtml.js adds a reference to the stylesheet to the head of index.html.
 
 ### How do I deploy this?
 
